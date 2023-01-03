@@ -16,5 +16,13 @@ public class Move : MonoBehaviour
     private void Update()
     {
         rigid.velocity = new Vector2(Input.GetAxisRaw("Horizontal") * moveSpeed, rigid.velocity.y);
+        if (Input.GetAxisRaw("Horizontal") == 1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = false;
+        }
+        else if (Input.GetAxisRaw("Horizontal") == -1)
+        {
+            gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        }
     }
 }
