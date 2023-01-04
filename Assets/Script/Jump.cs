@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Common;
 using System.Net;
 using System.Security.Principal;
@@ -16,8 +17,6 @@ public class Jump : MonoBehaviour
     private void Start()
     {
         rigid = gameObject.GetComponent<Rigidbody2D>();
-
-        StartCoroutine(CountDown());
     }
 
     private void Update()
@@ -65,16 +64,5 @@ public class Jump : MonoBehaviour
         }
         else
             rigid.gravityScale = 1;
-    }
-
-    IEnumerator CountDown()
-    {
-        int a = 0;
-        while (true)
-        {
-            Debug.Log(a + "ÃÊ °æ°ú");
-            yield return new WaitForSeconds(1.0f);
-            a++;
-        }
     }
 }
