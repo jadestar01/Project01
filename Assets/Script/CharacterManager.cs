@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.UIElements;
 
@@ -11,6 +13,15 @@ public class CharacterManager : MonoBehaviour
     public int maxHealth = 3;      //최대체력
     public int curHealth = 3;      //현재체력
     public int initHealth = 3;     //시작체력
+    [Header("Text Component")]
+    public TMP_Text health;
+    public TMP_Text coin;
+
+    private void Update()
+    {
+        health.text = curHealth.ToString() + "/" + maxHealth.ToString();
+        coin.text = coinCount.ToString();
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

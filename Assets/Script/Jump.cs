@@ -28,7 +28,18 @@ public class Jump : MonoBehaviour
 
         GroundCheck();
         GractiyContorller();
+        Debug.Log(isGrounded);
     }
+
+    //
+    public void JumpButton()
+    {
+        if (isGrounded)
+        {
+            rigid.AddForce(Vector2.up * jumpPower, ForceMode2D.Impulse);
+        }
+    }
+    //
 
     void GroundCheck()
     {
